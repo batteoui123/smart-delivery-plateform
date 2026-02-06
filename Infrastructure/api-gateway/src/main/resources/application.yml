@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8888
+
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            # 1) USER-SERVICE (8081)
+                                - id: user-service
+                                  uri: lb://USER-SERVICE
+                                  predicates:
+                                    - Path=/api/auth/**,/api/users/**
+
+

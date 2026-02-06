@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: delivery-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: delivery-group  # Identifiant unique de ce service pour Kafka
+      auto-offset-reset: earliest # Si je suis nouveau, je relis les vieux messages ? (earliest=oui)
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
