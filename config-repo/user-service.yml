@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/user_db
     username: postgres
-    password: postgre
+    password: ${DB_PASSWORD}
 
 
   jpa:
@@ -30,5 +30,5 @@ management:
         include: health,info
 
 jwt:
-  secret: "0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF"
+  secret: ${JWT_SECRET}
   expiration-minutes: 120

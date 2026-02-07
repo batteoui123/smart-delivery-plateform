@@ -1,13 +1,12 @@
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
+
   cloud:
     config:
       server:
-        native:
-          search-locations: C:\Users\Lenovo\Desktop\practices_microservices\smart-delivery-platform\config-repo
+        git:
+          uri: https://github.com/batteoui123/smart-delivery-config.git
 server:
   port: 8888
 
